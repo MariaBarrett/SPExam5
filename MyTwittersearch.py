@@ -1,4 +1,7 @@
+
 from TwitterSearch import *
+f2 = open("data/tagged","r+") #read and write
+
 try:
 	tso = TwitterSearchOrder() 
 	tso.setKeywords(['Obama']) 
@@ -15,7 +18,12 @@ try:
 
 
 	for tweet in ts.searchTweetsIterable(tso): 
-		print(unicode('@%s tweeted: %s' % ( tweet['user']['screen_name'], tweet['text'])))
+		manytweets = (('@%s tweeted: %s' % ( tweet['user']['screen_name'], tweet['text'])).encode('utf-8'))
+		f2.write(manytweets)
+		f2.write("\n\n")
+		print manytweets
+		
+
 
 except TwitterSearchException as e: #in case of errors
 	print (e)

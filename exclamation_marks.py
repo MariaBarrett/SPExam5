@@ -3,30 +3,33 @@
 from __future__ import division
 from collections import Counter
 import pylab as pl
+import numpy as np
 
-#tweets = ('tweets.txt')
-fashion = ('tweets.txt')
-#soccer = ('soccer.txt')
+fashion = ('/Users/Maria/Documents/ITandcognition/Github/SPExam5/data/fashion.txt')
+soccer = ('/Users/Maria/Documents/ITandcognition/Github/SPExam5/data/soccer.txt')
+
+#fashion = ('/data/fashion.txt')
+#soccer = ('/data/soccer.txt')
 
 #split by double newline aka by every new tweet
 fashion2 = open(fashion).read().split("\n\n")
-#soccer2 = open(soccer).read().split("\n\n")
+soccer2 = open(soccer).read().split("\n\n")
 
 def averageexclamations(data):
     for tweet in data:
-        counted = Counter(tweet)
+  	averagelist =[]
+     	counted = Counter(tweet)
         exclamationcount = counted['!']
-        lenght = len(tweet)
+       	lenght = len(tweet)
         exclamationratio = exclamationcount / lenght
+        print exclamationratio
         average = exclamationratio / len(data)
-        return average
+     	averagelist.append(average)
 
 fashionaverage = averageexclamations(fashion2)
-averages = [fashionaverage]
-classes = [fashion]
+socceraverage = averageexclamations(soccer2)
 
-pl.clf()
-pl.bar(pl.arange(len(averages)),averages)
-pl.xticks(pl.arange(len(classes)),classes, rotation=80)
-pl.show
-#print ("result %s" % result)
+averages = [fashionaverage,socceraverage]
+classes = [fashion,soccer]
+
+print averages

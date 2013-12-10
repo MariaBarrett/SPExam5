@@ -1,10 +1,10 @@
 
 from TwitterSearch import *
-f2 = open("data/tagged","r+") #read and write
+f2 = open("data/fashion","r+") #read and write
 
 try:
 	tso = TwitterSearchOrder() 
-	tso.setKeywords(['Obama']) 
+	tso.setKeywords(['fashion']) 
 	tso.setLanguage('en') #language (but it doesn't work)
 	tso.setCount(10) 
 	tso.setIncludeEntities(False)

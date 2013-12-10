@@ -15,6 +15,9 @@ soccer = ('/Users/Maria/Documents/ITandcognition/Github/SPExam5/data/soccer.txt'
 fashion2 = open(fashion).read().split("\n\n")
 soccer2 = open(soccer).read().split("\n\n")
 
+print len(fashion2)
+print len(soccer2)
+
 def averageexclamations(data):
     averagelist =[]
     sum = 0
@@ -24,10 +27,10 @@ def averageexclamations(data):
        	lenght = len(tweet)
         exclamationratio = exclamationcount / lenght
         average = exclamationratio / len(data)
-        print 
-     	sum += average
-    Average = sum/len(data)
+        sum += average
+    Average = sum/len(data) * 100
     return Average
+   
 
 fashionaverage = averageexclamations(fashion2)
 socceraverage = averageexclamations(soccer2)

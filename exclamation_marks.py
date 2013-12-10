@@ -16,15 +16,18 @@ fashion2 = open(fashion).read().split("\n\n")
 soccer2 = open(soccer).read().split("\n\n")
 
 def averageexclamations(data):
-    for tweet in data:
-  	averagelist =[]
-     	counted = Counter(tweet)
+    averagelist =[]
+    sum = 0
+    for tweet in data[:-1]: #empty tweet
+       	counted = Counter(tweet)
         exclamationcount = counted['!']
        	lenght = len(tweet)
         exclamationratio = exclamationcount / lenght
-        print exclamationratio
         average = exclamationratio / len(data)
-     	averagelist.append(average)
+        print 
+     	sum += average
+    Average = sum/len(data)
+    return Average
 
 fashionaverage = averageexclamations(fashion2)
 socceraverage = averageexclamations(soccer2)

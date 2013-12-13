@@ -1,10 +1,10 @@
 
 from TwitterSearch import *
-f2 = open("data/fashion","r+") #read and write
+f2 = open("data/untagged2.txt","r+") #read and write
 
 try:
 	tso = TwitterSearchOrder() 
-	tso.setKeywords(['fashion']) 
+	tso.setKeywords(['']) #which keyword to we use and how do we motivate it? 
 	tso.setLanguage('en') #language (but it doesn't work)
 	tso.setCount(10) 
 	tso.setIncludeEntities(False)

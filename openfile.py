@@ -10,7 +10,7 @@ import numpy
 #f2 = open("data/tagged","r+") #read and write
 
 f1 = open("/Users/Maria/Documents/ITandcognition/Github/SPExam5/data/untagged.txt","r") #only read
-f2 = open("/Users/Maria/Documents/ITandcognition/Github/SPExam5/data/tagged.txt","r+") #read and write
+f2 = open("/Users/Maria/Documents/ITandcognition/Github/SPExam5/data/tagged.txt","a") #append to file
 
 #split by double newline aka by every new tweet
 tweets2 = f1.read().split("\n\n")

@@ -1,10 +1,10 @@
 
 from TwitterSearch import *
-f2 = open("data/untagged2.txt","r+") #read and write
+f2 = open("data/untagged.txt","r+") #read and write
 
 try:
 	tso = TwitterSearchOrder() 
-	tso.setKeywords(['']) #which keyword to we use and how do we motivate it? 
+	tso.setKeywords(['Mandela']) #which keyword to we use and how do we motivate it? 
 	tso.setLanguage('en') #language (but it doesn't work)
 	tso.setCount(10) 
 	tso.setIncludeEntities(False)
@@ -18,7 +18,7 @@ try:
 
 
 	for tweet in ts.searchTweetsIterable(tso): 
-		manytweets = (('@%s tweeted: %s' % ( tweet['user']['screen_name'], tweet['text'])).encode('utf-8'))
+		manytweets = (('%s' % (tweet['text'])).encode('utf-8'))
 		f2.write(manytweets)
 		f2.write("\n\n")
 		print manytweets

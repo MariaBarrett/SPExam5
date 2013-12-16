@@ -5,11 +5,9 @@ from collections import Counter
 import pylab as pl
 import numpy as np
 
-fashion = ('/Users/Maria/Documents/ITandcognition/Github/SPExam5/data/fashion.txt')
-soccer = ('/Users/Maria/Documents/ITandcognition/Github/SPExam5/data/soccer.txt')
 
-#fashion = ('/data/fashion.txt')
-#soccer = ('/data/soccer.txt')
+fashion = ('/data/fashion.txt')
+soccer = ('/data/soccer.txt')
 
 #split by double newline aka by every new tweet
 fashion2 = open(fashion).read().split("\n\n")

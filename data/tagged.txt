@@ -1,0 +1,10 @@
+Nelson	NOUN
+Mandela:	NOUN
+A	DET
+missionary	ADJ
+perspective	NOUN
+http://t.co/JAs6UO92yF	X
+via	ADP
+@worldnetdaily	X
+
+

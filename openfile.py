@@ -17,6 +17,7 @@ tweets2 = f1.read().split("\n\n")
 
 tweetlist = [i.split() for i in tweets2]
 
+print len(tweets2)
 
 
 allowed = ['ADV','VERB','NOUN','ADP','PRON','DET','.','PRT','NUM','X','CONJ','ADJ']

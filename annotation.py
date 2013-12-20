@@ -75,6 +75,9 @@ def tag():
 def tagging(cmd):
 
 	if cmd not in legal:
+		print "No. Try again."
+		tag();
+
 
 
 #--------------------------------------------------------------------------------------

@@ -3,6 +3,7 @@ import sys, glob
 import collections
 from collections import Counter
 import numpy
+import subprocess
 
 #### Opening and closing data files! ####
 
@@ -19,6 +20,7 @@ tweetlist = [i.split() for i in tweets2]
 
 
 allowed = ['ADV','VERB','NOUN','ADP','PRON','DET','.','PRT','NUM','X','CONJ','ADJ','QUIT']
+legal = ["1","2","3"]
 #print f2.read()
 
 
@@ -60,7 +62,19 @@ def annotate():
 
 
 def tag():
-	"SOMETHING GOES HERE!?"
+	print "What do you want to do? \n"
+	print "-"*45
+	print "1. Train the tagger"
+	print "2. Tag train.google with the tagger"
+	print "3. Return to main menu"
+	print "-"*45
+
+	utag = raw_input("Please select a number: ")
+
+
+def tagging(cmd):
+
+	if cmd not in legal:
 
 
 #--------------------------------------------------------------------------------------
@@ -76,7 +90,7 @@ def userinput():
 	print "-"*45
 	print "What do you want to do?\n"
 	print "1. Annotate that shit"
-	print "2. Tag that shit with the annotated shit"
+	print "2. Use dat fancy TnT tagger"
 	print "3. Quit that shit \n"
 	print "-"*45
 	uinput = raw_input("Please select a number: ")
@@ -90,7 +104,6 @@ Depending on the inputn, the function will either call the annotator function, t
 When that function is done, it will call userinput() again.
 """
 def commands(cmd):
-	legal = ["1","2","3"]
 
 	if cmd not in legal:
 		print "No. Try again."
